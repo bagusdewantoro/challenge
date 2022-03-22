@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Task 02</title>
+  <style>
+    .title {
+      color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <h2 class="title">JavaScript HTML DOM</h2>
+  <div id="main">
+    <p>Finding HTML Elements by Tag Name</p>
+    <p>This example demonstrates the <b>getElementsByTagName</b> method.</p>
+  </div>
+  <p id="demo"></p>
+  <button id="first-button">Button 1</button>
+  <button id="second-button">Button 2</button>
+
+  <script>
+    const x = document.getElementById("main");
+    const y = x.getElementsByTagName("p");
+    const firstButton = document.getElementById("first-button");
+    const secondButton = document.getElementById("second-button");
+
+    const generateText = (index) => document.getElementById("demo").innerHTML = `The first paragraph (index ${index}) inside "main" is: ${y[index].innerHTML}`
+    firstButton.addEventListener("click", () => generateText(0));
+    secondButton.addEventListener("click", () => generateText(1));
+  </script>
+</body>
+
+</html>
